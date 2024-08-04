@@ -4,9 +4,9 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.FIRST)
 @Config.Sources({
-        "classpath:emulation.properties"
+        "classpath:emulator.properties"
 })
-public interface EmulateMobileConfig extends Config {
+public interface EmulatorMobileConfig extends Config {
 
     String platformVersion();
 
@@ -16,8 +16,10 @@ public interface EmulateMobileConfig extends Config {
 
     String appActivity();
 
-    String mobileUrl();
+    String appiumUrl();
+
     String appLanguage();
+
     String appLocale();
 
 }

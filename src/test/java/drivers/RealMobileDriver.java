@@ -2,7 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 
-import config.RealMobileMobileConfig;
+import config.RealMobileConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -25,7 +25,7 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class RealMobileDriver implements WebDriverProvider {
 
-    private static final RealMobileMobileConfig config = ConfigFactory.create(RealMobileMobileConfig.class, System.getProperties());
+    private static final RealMobileConfig config = ConfigFactory.create(RealMobileConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -50,7 +50,7 @@ public class RealMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.mobileUrl());
+            return new URL(config.appiumUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

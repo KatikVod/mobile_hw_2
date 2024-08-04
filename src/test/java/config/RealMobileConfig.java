@@ -6,16 +6,18 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:real.properties"
 })
-public interface RealMobileMobileConfig extends Config {
+public interface RealMobileConfig extends Config {
 
     String deviceName();
 
-    String mobileUrl();
+    String appiumUrl();
 
     String appPackage();
 
     String appActivity();
+
     String appLanguage();
+
     String appLocale();
 
 }

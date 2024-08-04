@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.EmulateMobileConfig;
+import config.EmulatorMobileConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -22,7 +22,7 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class EmulatorMobileDriver implements WebDriverProvider {
 
-    private static final EmulateMobileConfig config = ConfigFactory.create(EmulateMobileConfig.class, System.getProperties());
+    private static final EmulatorMobileConfig config = ConfigFactory.create(EmulatorMobileConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -48,7 +48,7 @@ public class EmulatorMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.mobileUrl());
+            return new URL(config.appiumUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
