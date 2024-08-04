@@ -58,7 +58,7 @@ public class EmulatorMobileDriver implements WebDriverProvider {
         String appVersion = "app-alpha-universal-release.apk";
         String appUrl = "https://github.com/wikimedia/apps-android-wikipedia" +
                 "/releases/download/latest/" + appVersion;
-        String appPath = "src/test/resources/apps/" + appVersion;
+        String appPath = "src/test/resources/" + appVersion;
 
         File app = new File(appPath);
         if (!app.exists()) {
